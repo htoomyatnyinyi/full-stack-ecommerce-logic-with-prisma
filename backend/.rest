@@ -1,0 +1,22 @@
+POST http://localhost:3001/cart
+Content-Type: application/json
+
+{
+  "productId": 3,
+  "quantity": 3
+}
+
+###
+GET http://localhost:3001/cart
+
+###
+POST http://localhost:3001/product
+Content-Type: application/json
+
+{
+  "name": "Tshirts",
+  "price": 3004
+}
+
+###
+GET http://localhost:3001/product
