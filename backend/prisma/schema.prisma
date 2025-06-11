@@ -21,15 +21,47 @@ datasource db {
 
 
 model Product {
-  id        Int     @id @default(autoincrement())
+  id        Int        @id @default(autoincrement())
   name      String
-  price     Float
+  price     Int
   cartItems CartItem[]
+  orderItems OrderItem[]
 }
+// model Product {
+//   id        Int     @id @default(autoincrement())
+//   name      String
+//   price     Float
+//   cartItems CartItem[]
+// }
 
 model CartItem {
   id        Int    @id @default(autoincrement())
   quantity  Int
   product   Product @relation(fields: [productId], references: [id])
   productId Int
+}
+
+
+
+// model CartItem {
+//   id        Int     @id @default(autoincrement())
+//   quantity  Int
+//   product   Product @relation(fields: [productId], references: [id])
+//   productId Int
+// }
+
+model Order {
+  id         Int         @id @default(autoincrement())
+  createdAt  DateTime    @default(now())
+  items      OrderItem[]
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  order     Order   @relation(fields: [orderId], references: [id])
+  orderId   Int
+  product   Product @relation(fields: [productId], references: [id])
+  productId Int
+  quantity  Int
+  price     Int
 }

@@ -15,7 +15,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-app.post("/products ", async (req, res) => {
+app.post("/products", async (req, res) => {
   const { name, price } = req.body;
   console.log(req.body);
 
@@ -66,7 +66,11 @@ app.get("/cart", async (req, res) => {
 
 app.post("/cart/total", async (req, res) => {
   const { itemIds } = req.body;
-  console.log(req.body, "from check out button ");
+  console.log(
+    req.body,
+    "from check out button to calculate price but only itemIds",
+    itemIds
+  );
 
   try {
     const cartItems = await prisma.cartItem.findMany({

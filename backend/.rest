@@ -1,8 +1,9 @@
+
 POST http://localhost:3001/cart
 Content-Type: application/json
 
 {
-  "productId": 3,
+  "productId": 1,
   "quantity": 3
 }
 
@@ -10,13 +11,31 @@ Content-Type: application/json
 GET http://localhost:3001/cart
 
 ###
-POST http://localhost:3001/product
+
+# POST http://localhost:3001/products
+# Content-Type: application/json
+
+# {
+#   "name": "abc",
+#   "price": 2000
+# }
+
+
+###
+POST http://localhost:3001/products
 Content-Type: application/json
 
 {
-  "name": "Tshirts",
-  "price": 3004
+  "name": "T-shirt",
+  "price": 2300
 }
+###
+GET http://localhost:3001/products
 
 ###
-GET http://localhost:3001/product
+POST http://localhost:3001/cart/total
+Content-Type: application/json
+
+{
+  "itemIds": 23
+}
