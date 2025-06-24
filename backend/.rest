@@ -3,8 +3,8 @@ POST http://localhost:3001/cart
 Content-Type: application/json
 
 {
-  "productId": 1,
-  "quantity": 3
+  "productId": 2,
+  "quantity": 1
 }
 
 ###
@@ -26,8 +26,8 @@ POST http://localhost:3001/products
 Content-Type: application/json
 
 {
-  "name": "T-shirt",
-  "price": 2300
+  "name": "Style-Pant",
+  "price": 2500
 }
 ###
 GET http://localhost:3001/products
@@ -37,5 +37,5 @@ POST http://localhost:3001/cart/total
 Content-Type: application/json
 
 {
-  "itemIds": 23
+  "itemIds": 2
 }
